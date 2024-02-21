@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class sectohr {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the sec : ");
+        int totalsec=sc.nextInt();
+        int hr=totalsec/3600;
+        int rem=totalsec%3600;    
+        int min=rem/60;
+        int sec=rem%60;
+        String str=String.format("%02d: %02d : %02d ",hr,min,sec);
+        System.out.println("Time : "+str);
+    }
+}

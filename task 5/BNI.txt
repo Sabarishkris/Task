@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class bni {
+    public static void main(String[] args) {
+        Scanner  sc=new Scanner(System.in);
+        System.out.println("Enter the weight (kg) : ");
+        double weight=sc.nextDouble();
+        System.out.println("Enter the height (feet) : ");
+        double height=sc.nextDouble();
+        double bni=weight/(height*height);
+        System.out.println("Body Mass : "+bni);
+    }
+}

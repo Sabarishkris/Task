@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class bitwise {
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        System.out.println("Enter the num 1 : ");
+        int num1=sc.nextInt();
+        System.out.println("Enter the num 2 : ");
+        int num2=sc.nextInt();
+        System.out.println("And : " + (num1 & num2));
+        System.out.println("OR : "+(num1 |num2));
+        System.out.println("NOT num 1 : "+(~ num1 ));
+        System.out.println("XOR : "+(num1 ^ num2));
+        System.out.println("Right Shift num1 >>1 : "+(num1>>1));
+        System.out.println("Left Shift num2 << 1 :"+(num2<<1));
+        System.out.println("Right shift num1 >>>1 : "+(num1>>>1));
+    }
+}
