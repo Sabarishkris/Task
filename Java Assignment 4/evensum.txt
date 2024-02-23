@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class evensum {
+    public static int checksum(int n[]){
+        int sum=0;
+        for(int i=0;i<n.length;i++){
+            if(n[i]%2==0){
+                sum=sum+n[i];
+            }else{
+                continue;
+            }
+        }
+        return sum;
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the size : ");
+        int size=sc.nextInt();
+        int n[]=new int[size];
+        for (int i=0;i<size;i++){
+            n[i]=sc.nextInt();
+        }
+        int sum=checksum(n);
+        System.out.println(sum);
+    }
+}

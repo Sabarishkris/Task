@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class SecondOccurence {
+    public static int checkoccur(int target,int n[]){
+
+        int count=0;
+        int pos=0;
+        for(int i=0;i<n.length;i++){
+            if(target==n[i]){
+                count++;
+            }
+            if(count==2){
+                return i;
+            }
+        }
+        return -1;
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the size : ");
+        int size=sc.nextInt();
+        int n[]=new int[size];
+        System.out.println("Enter the Array  : ");
+        for(int i=0;i<size;i++){
+            n[i]=sc.nextInt();
+        }
+        System.out.println("Enter the target : ");
+        int target=sc.nextInt();
+        int result=checkoccur(target,n);
+        System.out.println("Occur : "+result);
+
+    }
+}
