@@ -1,25 +1,46 @@
+import java.util.Scanner;
+
 public class spiral5 {
     public static void main(String[] args) {
-        int[][] ans={{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+        Scanner sc=new Scanner(System.in);
+      
+        System.out.println("Enter the array size : ");
+        int size=sc.nextInt();
+        int [][] ans =new int[size][size];
         int rowstart=0,rowend=ans.length-1;
         int colstart=0,colend=ans.length-1;
+        int n=1;
         while(rowstart<rowend){
             for(int i=rowstart;i<=colend;i++){
-                System.out.print(ans[rowstart][i]+" ");
+              
+                ans[rowstart][i]=n;
+                n++;
             }
             rowstart++;
             for(int i=rowstart;i<=rowend;i++){
-                System.out.print(ans[i][colend] +" ");
+       
+                ans[i][colend]=n;
+                n++;
             }
             colend--;
             for (int i=colend;i>=colstart;i--){
-                System.out.print(ans[rowend][i]+" ");
+             
+                ans[rowend][i]=n;
+                n++;
             }
             rowend--;
             for(int i=rowend;i>=rowstart;i--){
-                System.out.print(ans[i][colstart]+" ");
+             
+                 ans[i][colstart]=n;
+                 n++;
             }
             colstart++;
+        }
+        for(int i=0;i<size;i++){
+            for(int j=0;j<size;j++){
+                System.out.print(ans[i][j] +" ");
+            }
+            System.out.println();
         }
     }
 }
