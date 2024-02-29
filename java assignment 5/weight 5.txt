@@ -1,26 +1,65 @@
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.*;
 
 public class weight5 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        System.out.println("Enter the Size Array : ");
-        int rowsize =sc.nextInt();
-        int [][]person=new int[rowsize][];
-        for(int i=0;i<rowsize;i++){
-            System.out.println("Enter the "+(i+1)+" weight size : ");
-            int colsize=sc.nextInt();
-            person[i]=new int[colsize];
-            System.out.println("Enter the Weight : ");
-            for(int j=0;j<colsize;j++){
-                person[i][j]=sc.nextInt();
+        System.out.println("Enter the person : ");
+        int personsize=sc.nextInt();
+        List<Integer> []person=new List[personsize];
+        for(int i=0;i<personsize;i++) {
+            person [i]=new ArrayList<Integer>();
+        }
+        System.out.println("Thank you for your update ");
+        System.out.println("*******************************************************************************");
+
+        while(true){
+            System.out.println(" 1->Add weight  || 2->nth Person minimum weight || 3->Exit");
+            int n=sc.nextInt();
+            switch (n){
+                case 1:
+                    System.out.println("Select the person and update the weight : ");
+                    int personindex=sc.nextInt();
+                    if(personindex< 1 || personindex >person.length){
+                        System.out.println("Enter the valid index ");
+                        break;
+                    }
+                    System.out.println("Enter the Storing weight : ");
+                    int store=sc.nextInt();
+                    for(int i=0;i<store;i++){
+                        person[personindex-1].add(sc.nextInt());
+                    }
+                    System.out.println("Done !! *********************************************");
+                    break;
+                case 2:
+                    System.out.println("select the nth person : ");
+                    int nperson=sc.nextInt();
+                    if(person[nperson-1].isEmpty()){
+                        System.out.println("There is no person ");
+                        continue;
+                    }
+                    if(nperson<1 || nperson>person.length){
+                        System.out.println("Enter the valid Nth person ");
+                        break;
+                    }
+
+                   int min=Collections.min(person[nperson-1]);
+                    System.out.println("Person "+nperson+" minimum weight is "+min);
+                    System.out.println("**********************************************************");
+                    break;
+                case 3:
+                    System.out.println("Thank you !!!.....");
+                    System.out.println("***********************************************************");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Enter the valid number ");
+                    System.out.println("*************************************************************");
+
+
             }
         }
-        System.out.println("Enter the person num : ");
-        int personnum=sc.nextInt();
-        int min=0;
-        for(int i=0;i<person[personnum].length-1;i++){
-            min=Math.min(person[personnum-1][i],person[personnum-1][i+1]);
-        }
-        System.out.println("The person  "+personnum +" Minimum weight : "+min);
+
     }
-}
+    }
