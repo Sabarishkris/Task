@@ -1,0 +1,31 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Rotatearray5 {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the ArraySize : ");
+        int size=sc.nextInt();
+        int []num=new int[size];
+        System.out.println("Enter the Array : ");
+        for(int i=0;i< num.length;i++){
+            num[i]=sc.nextInt();
+        }
+        System.out.println("Enter the rotating time : ");
+        int rotate=sc.nextInt();
+        if(num.length<0){
+            System.out.println(Arrays.toString(num));
+        }
+
+       while (rotate>0) {
+        int temp = num[0];
+            for (int i = 1; i < num.length; i++) {
+                num[i-1] = num[i];
+            }
+            num[num.length-1]=temp;
+            rotate--;
+       }
+        System.out.println(Arrays.toString(num));
+    }
+}

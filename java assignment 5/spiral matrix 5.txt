@@ -1,0 +1,25 @@
+public class spiral5 {
+    public static void main(String[] args) {
+        int[][] ans={{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+        int rowstart=0,rowend=ans.length-1;
+        int colstart=0,colend=ans.length-1;
+        while(rowstart<rowend){
+            for(int i=rowstart;i<=colend;i++){
+                System.out.print(ans[rowstart][i]+" ");
+            }
+            rowstart++;
+            for(int i=rowstart;i<=rowend;i++){
+                System.out.print(ans[i][colend] +" ");
+            }
+            colend--;
+            for (int i=colend;i>=colstart;i--){
+                System.out.print(ans[rowend][i]+" ");
+            }
+            rowend--;
+            for(int i=rowend;i>=rowstart;i--){
+                System.out.print(ans[i][colstart]+" ");
+            }
+            colstart++;
+        }
+    }
+}

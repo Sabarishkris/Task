@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class weight5 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Size Array : ");
+        int rowsize =sc.nextInt();
+        int [][]person=new int[rowsize][];
+        for(int i=0;i<rowsize;i++){
+            System.out.println("Enter the "+(i+1)+" weight size : ");
+            int colsize=sc.nextInt();
+            person[i]=new int[colsize];
+            System.out.println("Enter the Weight : ");
+            for(int j=0;j<colsize;j++){
+                person[i][j]=sc.nextInt();
+            }
+        }
+        System.out.println("Enter the person num : ");
+        int personnum=sc.nextInt();
+        int min=0;
+        for(int i=0;i<person[personnum].length-1;i++){
+            min=Math.min(person[personnum-1][i],person[personnum-1][i+1]);
+        }
+        System.out.println("The person  "+personnum +" Minimum weight : "+min);
+    }
+}

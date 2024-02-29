@@ -1,0 +1,16 @@
+import java.util.Arrays;
+
+public class transposematrix5{
+    public static void main(String[] args) {
+        int [][]arr={{1,2,3,4},{5,6,7,11},{8,9,10,12}};
+        int [][]arr1=new int[arr[0].length][arr.length];
+
+        for(int i=0;i<arr1.length;i++){
+            for(int j=0,index=0;j<arr1[i].length && index<arr1.length;j++,index++){
+                arr1[i][j]=arr[index][i];
+            }
+        }
+        System.out.println(Arrays.deepToString(arr1));
+    }
+
+}
