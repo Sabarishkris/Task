@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class reverseasentence6 {
+    public static String reverse(String str){
+        if(str.lastIndexOf(" ")==-1){
+            return str;
+        }
+        int index=str.lastIndexOf(" ");
+        String Last=str.substring(index+1);
+        String rem=str.substring(0,index);
+        return Last+" "+reverse(rem);
+    }
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        System.out.println("Enter the Sentence : ");
+        String str=sc.nextLine();
+        String reverse=reverse(str);
+        System.out.println("Reverse : "+reverse);
+    }
+}

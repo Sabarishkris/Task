@@ -1,0 +1,21 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class sentencefirstcharcaps6 {
+    public static String caps(String str){
+        if(!str.contains(" ")) return str.substring(0, 1).toUpperCase() + str.substring(1);
+        int first=str.indexOf(" ");
+        String firs=str.substring(0,1).toUpperCase()+str.substring(1,first);
+        String rem=str.substring(first+1);
+        return firs+" " +caps(rem);
+
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the sentence : ");
+        String str=sc.nextLine();
+       String caps=caps(str);
+
+        System.out.println(caps);
+    }
+}

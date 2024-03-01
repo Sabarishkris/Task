@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+public class properemail6 {
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        System.out.println("Enter the mail : ");
+        String email=sc.nextLine();
+        final String PRINT="Invalid mail id !!.....";
+        String [] check=email.split("@");
+
+        if(check.length!=2  ){
+            System.out.println(PRINT);
+            System.exit(0);
+        }
+        String s1=check[0];
+        if(s1.isEmpty() || s1.charAt(0)=='.' || s1.charAt(s1.length()-1)=='.'){
+            System.out.println(PRINT);
+          System.exit(0);
+        }
+        for(int i=0;i<s1.length();i++){
+            if(i<s1.length()-1 && s1.charAt(i)=='.' && s1.charAt(i+1)=='.'){
+                System.out.println(PRINT);
+                System.exit(0);
+            }
+            if(Character.isDigit(s1.charAt(i)) || Character.isLetter(s1.charAt(i)) || s1.charAt(i)=='.'){
+                continue;
+            }
+            else{
+                System.out.println(PRINT);
+                System.exit(0);
+            }
+        }
+
+        String s2=check[1];
+        if(s2.charAt(0)=='.' || s2.charAt(s2.length()-1)=='.'){
+            System.out.println(PRINT);
+            System.exit(0);
+        }
+        int count=0;
+        for(int i=0;i<s2.length();i++){
+            if(i<s2.length()-1 && s2.charAt(i)=='.' && s2.charAt(i+1)=='.' ){
+                System.out.println(PRINT);
+                System.exit(0);
+            }
+            if(s2.charAt(i)=='.'){
+                count++;
+            }
+            if( Character.isLowerCase(s2.charAt(i)) || s2.charAt(i)=='.'){
+                continue;
+            }
+
+            else{
+                System.out.println(PRINT);
+                System.exit(0);
+            }
+        }
+        if(count==1 || count==2) {
+            System.out.println("Valid Email address : " + email);
+        }else {
+            System.out.println(PRINT);
+            System.exit(0);
+        }
+
+
+    }
+}

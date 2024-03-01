@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class reverseastring6 {
+    public static String reverse(String str){
+        if(str.length()==0){
+            return str;
+        }
+        String front=str.substring(str.length()-1);
+        String rem=str.substring(0,str.length()-1);
+        return front+reverse(rem);
+    }
+    public static void main(String[] args) {
+
+                Scanner sc=new Scanner(System.in);
+                System.out.println("Enter the String : ");
+                String s=sc.nextLine();
+                String reverse=reverse(s);
+                System.out.println("Reverse : "+reverse);
+            }
+        }
+
