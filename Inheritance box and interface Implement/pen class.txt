@@ -1,0 +1,16 @@
+package boxinterface;
+
+ public class Pen implements myinterface1{
+     String color="White pen";
+     public void close() {
+         System.out.println("pen close ");
+     }
+     public void open() {
+         System.out.println("Pen open ");
+     }
+     public void write() {
+         System.out.println("Pen write");
+     }
+
+ }
+

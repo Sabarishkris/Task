@@ -1,0 +1,42 @@
+package boxinterface;
+
+public class Main3 {
+    public static void main(String[] args) {
+        System.out.println(" Box obj=new Box()");
+        Box obj1=new Box();
+        obj1.open();
+        obj1.write();
+        obj1.store();
+        obj1.close();
+        System.out.println("Instance : "+obj1.color);
+        System.out.println("*****************************************");
+        System.out.println("Bag obj =new Bag()");
+        Bag obj =new Bag();
+        obj.open();
+        obj.write();
+        obj.lock();
+        obj.store();
+        obj.close();
+        System.out.println("Instance : "+obj.color);
+        System.out.println("**********************************");
+
+    }
+}
+/*
+ Box obj=new Box()
+Box open
+Pen write
+Box store
+Box close
+Instance : Black box
+*****************************************
+Bag obj =new Bag()
+bag open
+Pen write
+bag lock
+bag store
+bag close
+Instance : Red bag
+**********************************
+
+ */

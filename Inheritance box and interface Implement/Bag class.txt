@@ -1,0 +1,15 @@
+package boxinterface;
+
+public class Bag extends Box implements myinterface1,myinterface2,myinterface3,myinterface4{
+    String color = "Red bag";
+    public void open() {
+        System.out.println("bag open");
+    }
+    public void close() {
+        System.out.println("bag close");
+    }
+    public void lock() {System.out.println("bag lock");}
+    public void store() {System.out.println("bag store");}
+}
+
+

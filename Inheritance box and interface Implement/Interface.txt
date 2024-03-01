@@ -1,0 +1,32 @@
+package boxinterface;
+interface myinterface1 {
+    void open ();
+    void close();
+    void write();
+}
+interface myinterface2{
+    void open();
+    void store();
+    void write();
+    void close();
+}
+interface myinterface3{
+    void open();
+    void close();
+    void lock();
+}
+interface myinterface4{
+    void write();
+    void lock();
+
+}
+interface myinterface5{
+
+    void open();
+    void close();
+    void store();
+    void write();
+}
+
+
+

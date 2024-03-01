@@ -1,0 +1,13 @@
+package boxinterface;
+
+public class Box extends Pen implements myinterface1, myinterface2,myinterface5 {
+
+        String color="Black box";
+        public void close() {
+            System.out.println("Box close ");
+        }
+        public void open() {
+            System.out.println("Box open ");
+        }
+        public void store() {System.out.println("Box store ");}
+    }

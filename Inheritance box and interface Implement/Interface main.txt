@@ -1,0 +1,41 @@
+package boxinterface;
+
+public class Intermain {
+    public static void main(String[] args) {
+        System.out.println("Interface Pen ");
+        myinterface1 obj1=new Pen();
+        obj1.open();
+        obj1.write();
+        obj1.close();
+        System.out.println("**************************");
+        System.out.println("Interface Box ");
+        myinterface2 obj2=new Box();
+        obj2.open();
+        obj2.store();
+        obj2.write();
+        obj2.close();
+        System.out.println("*****************************");
+        System.out.println("Interface Bag ");
+        myinterface4 obj3=new Bag();
+        obj3.lock();
+        obj3.write();
+        System.out.println("*****************************");
+    }
+}
+/*
+Interface Pen
+Pen open
+Pen write
+pen close
+**************************
+Interface Box
+Box open
+Box store
+Pen write
+Box close
+*****************************
+Interface Bag
+bag lock
+Pen write
+*****************************
+ */

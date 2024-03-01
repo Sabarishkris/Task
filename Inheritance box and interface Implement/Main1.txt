@@ -1,0 +1,22 @@
+package boxinterface;
+
+public class Main1 {
+    public static void main(String[] args) {
+        System.out.println("Pen obj=new Pen()");
+        Pen obj=new Pen();
+        System.out.println("Method : ");
+        obj.open();
+        obj.close();
+        obj.write();
+        System.out.println("Instance : "+obj.color);
+    }
+}
+
+/*
+Pen obj=new Pen()
+Method :
+Pen open
+pen close
+Pen write
+Instance : White pen
+ */
