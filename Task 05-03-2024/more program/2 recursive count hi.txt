@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class recursivecounthi2 {
+    public static int counthi(String s){
+        if(s.length()==2 && s.equals("hi")){
+            return 1;
+        }
+        if(s.length() < 2){ return 0;}
+        int count=0;
+        String first=s.substring(0,2);
+        String rem=s.substring(1);
+        if(first.equals("hi")) count++;
+        return count+counthi(rem);
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the String : ");
+        String s=sc.nextLine();
+        int ans=counthi(s);
+        System.out.println("Answer : " +ans);
+    }
+}
