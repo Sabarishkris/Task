@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class antidiagonal3 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the size matrix n*n : ");
+        int size=sc.nextInt();
+        int num[][]=new int[size][size];
+        for(int i=0;i<size;i++){
+            for (int j=0;j<size;j++){
+                num[i][j]=sc.nextInt();
+            }
+        }
+        int rowstart=0,rowend= num.length-1;
+        int colstart=0,colend= num.length-1;
+        System.out.println(num[0][0]);
+        colstart++;
+        while(colstart<=colend){
+            int index=colstart;
+            for(int i=rowstart;i<=colstart;i++){
+                System.out.print(num[i][index]+" ");
+                index--;
+            }
+            System.out.println();
+            colstart++;
+        }
+
+        rowstart++;
+        while (rowstart<=rowend){
+            int index=colend;
+            for(int i=rowstart;i<=colend;i++){
+                System.out.print(num[i][index]+" ");
+                index--;
+            }
+            System.out.println();
+            rowstart++;
+        }
+        }
+
+    }
+

@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class recursiveaddstar1 {
+    public static String addstar(String s){
+        if(s.isEmpty()){
+            return s;
+        }
+        if(s.length()>1 &&  s.charAt(0)==s.charAt(1)){
+            String first=""+s.charAt(0);
+            String rem=s.substring(1);
+            return first+"*"+addstar(rem);
+        }
+        String first=""+s.charAt(0);
+        String rem=s.substring(1);
+
+        return first+addstar(rem);
+    }
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        System.out.println("Enter the String : ");
+        String s=sc.nextLine();
+        String result=addstar(s);
+        System.out.println("Result : "+result);
+    }
+}

@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class recursivebase3 {
+    public static int powerN(int mul,int power){
+        if(power==0){
+            return 1;
+        }
+        return mul*powerN(mul,power-1);
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the mul : ");
+        int mul=sc.nextInt();
+        System.out.println("Enter the pow : ");
+        int power=sc.nextInt();
+        int ans=powerN(mul,power);
+        System.out.println("Answer : "+ans);
+    }
+}

@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class twodimensionalstring {
+    public static int checkChild(String [][]family,String find){
+        int num=0,flag=0;
+        for(int i=0;i<family.length;i++){
+            if(family[i][1].equals(find)){
+                find=family[i][0];
+                flag=1;
+                break;
+            }
+        }
+        if(flag==0){
+            return -1;
+        }
+        for(int i=0;i<family.length;i++){
+            if(family[i][1].equals(find)){
+                num++;
+            }
+        }
+
+        return num;
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the list : ");
+        int list = sc.nextInt();
+        String family [][]=new String [list][2];
+        sc.nextLine();
+        System.out.println("Enter First Child the second father : ");
+        for(int i=0;i<list;i++){
+            for(int j=0;j<2;j++){
+                family[i][j]=sc.nextLine();
+            }
+        }
+        for (String[] temp :family){
+            for (String temp1:temp){
+                System.out.print(temp1 +" ");
+            }
+            System.out.println();
+        }
+        System.out.println("Enter the grandfather name : ");
+        String find =sc.nextLine();
+        int ans=checkChild(family,find);
+        if(ans==-1){
+            System.out.println("Invalid grandfather name !....");
+            System.exit(0);
+        }
+        System.out.println(find+" has "+ans +" grand children ");
+
+    }
+}

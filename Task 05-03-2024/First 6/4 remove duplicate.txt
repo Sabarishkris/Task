@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class removerepeate4 {
+    public static String check(String s){
+        for(int i=0;i<s.length();i++){
+            if(i<s.length()-1 && s.charAt(i)==s.charAt(i+1)){
+                s=s.substring(0,i)+s.substring(i+2);
+                i=0;
+            }
+        }
+        if(s.length()==2 && s.charAt(0)==s.charAt(1)){
+            return "Empty";
+        }
+        return s;
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the String : ");
+        String s= sc.nextLine();
+        String result=check(s);
+
+        System.out.println("Result : "+result);
+    }
+}
