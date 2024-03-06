@@ -1,0 +1,97 @@
+import java.util.*;
+
+public class train5 {
+    public static String[][] createtrips(int num){
+        Scanner sc=new Scanner(System.in);
+        String [][] arr =new String[num][2];
+        for(int i=0;i<num;i++){
+                arr[i][0]=sc.nextLine();
+                arr[i][1]=sc.nextLine();
+        }
+        return arr;
+    }
+public static void print(String [][]arr){
+    for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i][0] +"  "+arr[i][1]);
+        System.out.println();
+    }
+}
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the trips A : ");
+        int tripsa=sc.nextInt();
+        System.out.println("Enter the Schedule A (Departure // Arrival ");
+        String[][]tripsTimeA=createtrips(tripsa);
+        System.out.println("Enter the trips B : ");
+        int tripsb=sc.nextInt();
+        System.out.println("Enter the Schedule B (Departure // Arrival ");
+        String[][]tripsTimeB=createtrips(tripsb);
+        System.out.println("Train A Schedule ");
+        print(tripsTimeA);
+        System.out.println("Train B Schedule ");
+        print(tripsTimeB);
+        int ans[]=findtrain(tripsTimeA,tripsTimeB);
+        if(ans[0]<0 || ans[1]<0){
+            System.out.println("Invalid input");
+        }else System.out.println("Total train need station A is  : " +ans[0] +" B is : "+ans[1]);
+    }
+    public static int count(List<Integer>arr1,List<Integer>arr2){
+        if(arr2.isEmpty() ){
+            return arr1.size();
+        }
+        int count=0;
+        for(int i=0;i<arr1.size();i++) {
+            if (Collections.min(arr2) < arr1.get(i)) {
+                arr2.remove(Collections.min(arr2));
+                continue;
+            }
+            if (!arr1.isEmpty() && !(Collections.min(arr2) < arr1.get(i))){
+                count++;
+            }
+        }
+        return count;
+    }
+    public static int correct(String s){
+        int n1=0,n2=0;
+        String[] n=s.split(":");
+        if(n.length==2){
+            try{
+                n1=Integer.parseInt(n[0]);
+                n2=Integer.parseInt(n[1]);
+            }catch (NumberFormatException e){
+                System.out.println("Invalid input");
+                return -1;
+            }
+            if(n1<0 || n1>23 || n2<0 || n2 >60){
+                return -1;
+            }
+            n1=n1*60;
+            n2=n1+n2;
+            return n2;
+        }
+        return -1;
+    }
+    public static List<Integer> check(String[][]arr,int index){
+        List<Integer>ls=new ArrayList<>();
+        for(int i=0;i< arr.length;i++){
+            int crt=correct(arr[i][index]);
+            if(crt==-1) {
+                System.out.println("Invalid Input ");
+                System.exit(0);
+            }
+            ls.add(crt);
+        }
+        return ls;
+    }
+    public static int[] findtrain(String [][]a,String[][]b){
+        int []ans=new int[2];
+        List<Integer>aDeparture=check(a,0);
+        List<Integer>aArrival=check(a,1);
+        List<Integer>bDeparture=check(b,0);
+        List<Integer>bArrival=check(b,1);
+        ans[0]=count(aDeparture,bArrival);
+        ans[1]=count(bDeparture,aArrival);
+        return ans;
+    }
+
+}
