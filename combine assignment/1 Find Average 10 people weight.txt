@@ -1,0 +1,22 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class AverageWeightTenPeopleC1 {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        //float[]weights=new float[10];
+        float sum=0;
+        String input="";
+        System.out.println("Enter the 10 people weights : " );
+        for (int i=0;i<10;i++){
+            float temp=scanner.nextFloat();
+            sum+=temp;
+            input+=temp+" ";
+        }
+        System.out.println("Input : "+input);
+        float avg=sum/10;
+        System.out.println();
+        System.out.print("Average of ten people weights : ");
+        System.out.printf("%.1f",avg );
+    }
+}

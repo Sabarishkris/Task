@@ -1,0 +1,24 @@
+public class ClassProductC4 {
+   static byte a;
+    static short b;
+    static int c;
+    static long d;
+    static float e;
+    static  double f;
+    static boolean g;
+    static String h;
+    static char i;
+    public static void main(String[] args) {
+        System.out.println("Byte : "+a);
+        System.out.println("Short : "+b);
+        System.out.println("Integer : "+c);
+        System.out.println("Long : "+d);
+        System.out.println("Float : "+e);
+        System.out.println("Double : "+f);
+        System.out.println("Boolean : "+g);
+        System.out.println("String : "+h);
+        System.out.println("Character : "+i);
+        ClassProductC4 obj=new ClassProductC4();
+        System.out.println("Class Name : "+obj);
+    }
+}

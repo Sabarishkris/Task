@@ -1,0 +1,16 @@
+public class ScopeOfTheVariableC2 {
+    public static void main(String[] args) {
+        int num1=2;
+        if(true){
+            int num2=3;
+        }
+        System.out.println( "Variable outside the if block : "+num1);
+        //System.out.println("Variable inside the if block : "+num2);
+    }
+}
+/*
+C:\Users\zoho\IdeaProjects\first\src\ScopeOfTheVariableC2.java:8:62
+java: cannot find symbol
+  symbol:   variable num2
+  location: class ScopeOfTheVariableC2
+ */
