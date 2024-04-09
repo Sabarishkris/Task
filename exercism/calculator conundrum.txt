@@ -1,0 +1,31 @@
+import java.util.Objects;
+import java.util.Map;
+import java.util.function.BiFunction;
+import java.util.Optional;
+class CalculatorConundrum {
+    
+    private final Map<String, BiFunction<Integer, Integer, Integer>> operations = Map.of(
+            "+", Integer::sum,
+            "/", this::divide,
+            "*", this::multiply
+    );
+    
+    public String calculate(final int operand1, final int operand2, final String operation) {
+        if(Objects.isNull(operation)) throw new IllegalArgumentException("Operation cannot be null");
+        if(operation.isBlank()) throw new IllegalArgumentException("Operation cannot be empty");
+        int result = Optional.ofNullable(operations.get(operation))
+                .map(op -> op.apply(operand1, operand2))
+                .orElseThrow(() -> new IllegalOperationException(String.format("Operation '%s' does not exist", operation)));
+        return String.format("%s %s %s = %d", operand1, operation, operand2, result);
+    }
+    private int divide(final int dividend , final int divisor) {
+        try {
+            return dividend / divisor;
+        } catch(ArithmeticException exception) {
+            throw new IllegalOperationException("Division by zero is not allowed", exception);
+        }
+    }
+    private int multiply(final int multiplicand, final int multiplier) {
+        return multiplicand * multiplier;
+    }
+}
