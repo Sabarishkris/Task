@@ -40,7 +40,7 @@ public class FrequencySort {
     }
 
     private static Map<Integer, Integer> getFrequency(int[] num) {
-        Map<Integer, Integer> map = new TreeMap<>();
+        Map<Integer, Integer> map = new LinkedHashMap<>();
         for (int temp : num) {
             map.put(temp, map.getOrDefault(temp, 0) + 1);
         }
